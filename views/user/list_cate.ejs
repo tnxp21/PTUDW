@@ -23,4 +23,14 @@
       <hr />
     </th>
   </tr>
+  <% item.forEach(function(cate){ %>
+  <tr> 
+    <td>
+      <div class="cate">   
+        <a href="/cate/<%= cate._id %>"><%= cate.namecate %> <br> </a>    
+      </div>
+      <hr />
+    </td> 
+  </tr>
+  <% }); %>
 </table>

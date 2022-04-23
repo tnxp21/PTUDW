@@ -15,38 +15,43 @@
     </h3>
     <div class="container">
       <div class="row">
+        <% ca.forEach(function(item){ %>
         <div class="col-sm-4">
           <div class="thumbnail">
             <img
               class=""
-              src=""
-              alt="Sản phẩm 8"
+              src="/upload/<%- item.image %>"
               width="300px"
             />
             <div class="caption">
-              <h4 class="">name</h4>
+              <h4 class=""><%- item.name %></h4>
               <p
                 class=""
                 style="
                   white-space: nowrap;
                   overflow: hidden;
                   text-overflow: ellipsis;
-                ">note</p>
+                "
+              >
+                <%- item.note %>
+              </p>
 
               <div class="">
-                <p class="lead"> VNĐ</p>
+                <p class="lead"><%- item.price %> VNĐ</p>
               </div>
               <div class="">
                 <a
                   class="btn btn-success"
-                  href=""
+                  href="/user/detail-product/<%- item._id %>"
                   >Chi tiết</a
                 >
               </div>
             </div>
           </div>
         </div>
+        <% }); %>
       </div>
+
     </div>
   </div>
 </div>

@@ -43,6 +43,48 @@
                   <h1 id="header_8" class="form-header" data-component="header">
                     Contact Us
                   </h1>
+                  <% if (message.length> 0) { %>
+                    <div class="alert alert-danger">
+                      <%= message %>
+                    </div>
+                    <% } %>
+                </div>
+              </div>
+            </li>
+            <li class="form-line" data-type="control_widget" id="id_7">
+              <label class="form-label form-label-top form-label-auto" id="label_7" for="input_7"> </label>
+              <div id="cid_7" class="form-input-wide" data-layout="full">
+                <div data-widget-name="Show Map Location" style="width:100%;text-align:Left;overflow-x:auto"
+                  data-component="widget-field">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14895.728950522142!2d105.77649592879409!3d21.03539717591483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab4a5e274ded%3A0x27fa4d31a0cef9a9!2zROG7i2NoIFbhu41uZyBI4bqtdSwgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1603613450122!5m2!1svi!2s"
+                    width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+                  <div class="widget-inputs-wrapper">
+                    <input type="hidden" id="input_7" class="form-hidden form-widget  " name="q7_input7" value="" />
+                    <input type="hidden" id="widget_settings_7" class="form-hidden form-widget-settings"
+                      value="%5B%7B%22name%22%3A%22lat%22%2C%22value%22%3A%229.9114543%22%7D%2C%7B%22name%22%3A%22lng%22%2C%22value%22%3A%22126.0497553%22%7D%2C%7B%22name%22%3A%22zoom%22%2C%22value%22%3A%2210%22%7D%2C%7B%22name%22%3A%22addressText%22%2C%22value%22%3A%22Please%20enter%20your%20Google%20Map%20API%20Key%5Cnin%20the%20settings%20in%20order%20for%20the%20MAP%20to%20work.%22%7D%2C%7B%22name%22%3A%22customCSS%22%2C%22value%22%3A%22%23addressContainer%20%7B%5Cnwidth%3A%20100%25%3B%5Cn%7D%22%7D%5D"
+                      data-version="2" />
+                  </div>
+                  <script type="text/javascript">
+                    setTimeout(function () {
+                      var _cFieldFrame = document.getElementById("customFieldFrame_7");
+                      if (_cFieldFrame) {
+                        _cFieldFrame.onload = function () {
+                          if (typeof widgetFrameLoaded !== 'undefined') {
+                            widgetFrameLoaded(7, {
+                              "formID": 202981894227465
+                            })
+                          }
+                        };
+                        _cFieldFrame.src = "//widgets.jotform.io/mapAddress/?qid=7&ref=" + encodeURIComponent(window.location.protocol + "//" + window.location.host) + '' + '' + '&injectCSS=' + encodeURIComponent(window.location.search.indexOf("ndt=1") > -1);
+                        _cFieldFrame.addClassName("custom-field-frame-rendered");
+                      }
+                    }, 0);
+                  </script>
+                </div>
+              </div>
+            </li>
 
             <li class="form-line" data-type="control_fullname" id="id_9">
               <label class="form-label form-label-top form-label-auto" id="label_9" for="first_9"> Full Name
@@ -129,6 +171,12 @@
           JotForm.poweredByText = "Powered by JotForm";
         </script>
         <input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="202981894227465" />
+        <script type="text/javascript">
+          var all_spc = document.querySelectorAll("form[id='202981894227465'] .si" + "mple" + "_spc");
+          for (var i = 0; i < all_spc.length; i++) {
+            all_spc[i].value = "202981894227465-202981894227465";
+          }
+        </script>
         <div class="formFooter-heightMask">
 
       </form>

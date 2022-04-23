@@ -18,6 +18,39 @@
             </tr>
           </thead>
           <tbody>
+            <% var i=0 %>
+              <% data.forEach(function(item){ i ++%>
+                <tr>
+                  <td>
+                    <%= i %>
+                  </td>
+                  <td>
+                    <%= item.name%>
+                  </td>
+                  <td>
+                    <%= item.address%>
+                  </td>
+                  <td>
+                    <%= item.date.getDate()%>/ <%= item.date.getMonth() +1 %> / <%= item.date.getFullYear()%>
+                  </td>
+                  <td>
+                    <% if(item.st==0){ %>
+                      <span> Đang chờ xử lý</span>
+                      <%}else{ %>
+                        <span>Đã xác nhận</span>
+                        <%}%>
+                  </td>
+                  <td>
+                    <a href="/xemhang/<%= item._id %>">Xem</a>
+                    <% if(item.st==0){ %>
+                      | <a href="/delete-order/<%= item._id %>">Hủy</a>
+                      <%}else{ %>
+
+                        <%}%>
+
+                  </td>
+                </tr>
+                <%})%>
           </tbody>
         </table>
         <%- include("../layout/footer") %>

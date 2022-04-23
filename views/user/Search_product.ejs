@@ -13,6 +13,7 @@
     <div class="container">
       <h3 style="color: red;">Kết quả tìm kiếm :</h3>
       <div class="row">
+          <% danhsach.forEach(function(product){ %>
           <div class="col-sm-4">
                     <div class="thumbnail" >
                       <img
@@ -23,6 +24,7 @@
                       />
                       <div class="caption">
                         <h4 class="">
+                          <%- product.name %>
                         </h4>
                         <p
                           class=""
@@ -32,10 +34,11 @@
                             text-overflow: ellipsis;
                           "
                         >
+                          <%- product.note %>
                         </p>
                        
                           <div class="">
-                            <p class="lead"></p>
+                            <p class="lead"><%- product.price %> VNĐ</p>
                           </div>
                           <div class="">
                             <a
@@ -50,6 +53,7 @@
               
                
                 </div> 
+                <% }); %>
           </div>
           
           

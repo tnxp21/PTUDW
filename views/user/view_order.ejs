@@ -30,6 +30,22 @@
            
           </tr>
           <tbody>
+            <% var id = 0; var total = 0 %>
+            <% cart.cart.forEach(function(item){ id ++; total += item.price;%>
+            <tr>
+                <td><%= id%></td>
+                <td><%= item.item.name%></td>
+                <td> <img src="/upload/<%= item.item.image%>" width="150px" alt=""></td>
+                <td><%= item.qty%></td>
+                <td><%= item.price%>đ</td>
+            </tr>
+            <%})%>
+
+            <tr>
+                <td colspan="5">
+                    <p><strong style="color:red">Tồng Tiền: </strong> <%= total %>đ</p>
+                </td>
+            </tr>
         </tbody>
 
         </table>

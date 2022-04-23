@@ -15,6 +15,27 @@
               <th>Số lượng</th>
               <th>Thành tiền</th>
             </tr>
+            <% var total=0; if(data){ data.forEach(function(item){ total +=item.price %>
+              <tr>
+                <td><a
+                    href="/chi-tiet/<%= item.item.nameKhongDau%>.<%= item.item._id%>.<%= item.item.cateId%>.html"><img
+                      title="product" alt="product" src="/upload/<%= item.item.image%>" height="100" width="200"></a>
+                </td>
+                <td><a href="/chi-tiet/<%= item.item.nameKhongDau%>.<%= item.item._id%>.<%= item.item.cateId%>.html">
+                    <%= item.item.name%>
+                  </a></td>
+
+                <td>
+                  <%= item.item.price%> đ
+                </td>
+                <td><input id="<%= item.item._id%>" type="text" size="1" value="<%= item.qty%>" name="quantity[40]"
+                    class="span1">
+                </td>
+                <td>
+                  <%= item.price%> đ
+                </td>
+              </tr>
+              <%})}%>
           </table>
         </div>
         <div class="pull-right">
@@ -22,6 +43,7 @@
             <table class="table table-striped table-bordered ">
               <td><span class="extra bold totalamout">Tổng tiền :</span></td>
               <td><span class="bold totalamout">
+                  <%= total%> đ
                 </span></td>
               </tr>
             </table>
