@@ -1,0 +1,28 @@
+<%- include("../layout/head") %>
+
+  <link rel="stylesheet" href="css/body.css">
+  <%- include("../layout/nav") %>
+
+    <body>
+      <div class="container" style="margin-top: 2%;">
+        <h3>Chi tiết sản phẩm</h3>
+        <div class="row">
+          <div class="col-sm-6">
+            <img src="/upload/<%- danhsach.image %>" style="width: 100%; padding-top:2% ;">
+          </div>
+        </div>
+        <br>
+        <h2> Bình luận</h2>
+        <br>
+        <form action="/comment" method="POST">
+          <label style="float: left;">
+          </label>
+          <input type="hidden" class="form-control" rows="5" value="<%- danhsach._id %>" name="idsp"></textarea>
+          <textarea class="form-control" rows="5" name="note" id="comment"></textarea>
+          <br>
+          <button class="btn-primary" type="submit">Gửi</button>
+        </form>
+        <hr>
+      </div>
+      <%- include("../layout/footer") %>
+    </body>
