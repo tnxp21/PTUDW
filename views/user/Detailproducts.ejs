@@ -29,15 +29,19 @@
         <br>
         <h2> Bình luận</h2>
         <br>
-        <form action="/comment" method="POST">
-          <label style="float: left;">
-            <%- user.name %>
-          </label>
-          <input type="hidden" class="form-control" rows="5" value="<%- danhsach._id %>" name="idsp"></textarea>
-          <textarea class="form-control" rows="5" name="note" id="comment"></textarea>
-          <br>
-          <button class="btn-primary" type="submit">Gửi</button>
-        </form>
+        <% if(guess!=null){ %>
+              <form action="/comment" method="POST">
+                <label style="float: left;">
+                  <%- user.name %>
+                </label>
+                <input type="hidden" class="form-control" rows="5" value="<%- danhsach._id %>" name="idsp"></textarea>
+                <textarea class="form-control" rows="5" name="note" id="comment"></textarea>
+                <br>
+                <button class="btn-primary" type="submit" >Gửi</button>
+              </form>
+        <%}else{ %>
+              <p>Hãy</p> <a href="/login" style="color: green;">Đăng nhâp</a>
+        <%}%>
         <hr>
         <% cmt.forEach(function(comment){ %>
           <div>

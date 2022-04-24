@@ -6,7 +6,7 @@ var detail_product = express.Router();
 
 
 detail_product.get("/user/detail-product/:id",(req,res)=>{
-if(req.session.loggin){
+
   
   products.findById( req.params.id, function(err,data){
     if(err){
@@ -18,7 +18,7 @@ if(req.session.loggin){
         console.log(data)
         res.render("user/Detailproducts",{   
           cmt : data,
-          user : req.user
+          guess : user,
         });
       });
      
@@ -26,12 +26,8 @@ if(req.session.loggin){
       
     })
    
-
-
-}else{
-  res.redirect("/login")
-}
     });
+    
 detail_product.post("/comment",(req,res)=>{
   if(req.session.loggin){
       user = req.user
@@ -44,10 +40,9 @@ detail_product.post("/comment",(req,res)=>{
       });
       comment.save(function(err,data){
         if(err){
-    console.log(err)
+        console.log(err)
         }else{
-    
-          res.redirect("/product");
+          res.redirect("/product")
         }
       })
  

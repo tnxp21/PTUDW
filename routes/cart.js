@@ -27,18 +27,23 @@ cart.get("/shopping-cart", function (req, res) {
 });
 
 cart.get("/add-to-cart/:id", function (req, res) {
-  var id = req.params.id;
+  if(req.session.loggin){
+    var id = req.params.id;
 
-  var giohang = new GioHang(
-    req.session.cart ? req.session.cart : { items: {} }
-  );
+    var giohang = new GioHang(
+      req.session.cart ? req.session.cart : { items: {} }
+    );
 
-  products.findById(id).then(function (data) {
-    giohang.add(id, data);
-    req.session.cart = giohang;
-    console.log(giohang);
-    res.redirect("/shopping-cart");
-  });
+    products.findById(id).then(function (data) {
+      giohang.add(id, data);
+      req.session.cart = giohang;
+      console.log(giohang);
+      res.redirect("/shopping-cart");
+    });
+  }
+  else{
+    res.redirect("/login")
+  }
 });
 cart.get("/order", function (req, res) {
   var giohang = new GioHang(
