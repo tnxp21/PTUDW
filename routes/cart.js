@@ -120,6 +120,7 @@ cart.get("/view/:id", (req, res) => {
     res.render("admin/view-order", { cart: data });
   });
 });
+
 cart.get('/xacnhan/:id', function(req, res, next) {
   var id = req.params.id;
   Cart.findById(id, function(err, data){

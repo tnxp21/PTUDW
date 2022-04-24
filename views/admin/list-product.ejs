@@ -24,7 +24,7 @@
       <div class="row" style="margin-left: -5%" >
         
           <% danhsach.forEach(function(product){ %>
-          <div class="col-sm-3">
+          <div class="col-sm-3" style="height: 500px; width: 300px;">
                     <div class="thumbnail" >
                       <img
                         class=""
@@ -34,9 +34,9 @@
                         style="padding-right: 6%; width: 100%; height: 200px;"
                       />
                       <div class="caption">
-                        <h4 class="">
+                        <marquee class="" direction="left" style="font-size: 150%;">
                           <%- product.name %>
-                        </h4>
+                        </marquee>
                         <p
                           class=""
                           style="

@@ -8,7 +8,7 @@ body{
     font-family: 'Times New Roman', Times, serif;
   }
   .aside{
-      border-right: 2px solid red;
+      border-right: 2px solid rgb(7, 71, 37);
       float: left;
     width: 20%;
     min-height: 300px;

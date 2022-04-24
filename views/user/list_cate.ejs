@@ -4,6 +4,7 @@
     font-family: "Times New Roman", Times, serif;
     width: 100%;
     height: auto;
+   
   }
   th {
     font-size: 25px;
@@ -15,21 +16,21 @@
   }
 </style>
 <link rel="stylesheet" href="css/body.css">
-<table>
+<table >
 
-  <tr>
-    <th>
-      Danh mục sản phẩm
-      <hr />
+  <tr >
+    <th >
+      <h4 class="text-center" style="color:rgb(46, 85, 46); font-style: bold ;"><i>Danh mục</i></h4>
+      <hr>
     </th>
   </tr>
   <% item.forEach(function(cate){ %>
   <tr> 
-    <td>
-      <div class="cate">   
-        <a href="/cate/<%= cate._id %>"><%= cate.namecate %> <br> </a>    
+    <td >
+      <div class="cate" >   
+        <a style="color: rgb(44, 156, 91);" href="/cate/<%= cate._id %>"><u><%= cate.namecate %></u> <br> </a>    
       </div>
-      <hr />
+      <hr>
     </td> 
   </tr>
   <% }); %>

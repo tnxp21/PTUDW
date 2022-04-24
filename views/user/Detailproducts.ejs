@@ -6,11 +6,11 @@
     <body>
       <div class="container" style="margin-top: 2%;">
         <h3>Chi tiết sản phẩm</h3>
-        <div class="row">
+        <div class="row" >
           <div class="col-sm-6">
             <img src="/upload/<%- danhsach.image %>" style="width: 100%; padding-top:2% ;">
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-6" style="height: fit-content;">
 
             <input class="detail" type="hidden" value="<%- danhsach.id %>" name="idsp">
             <p style="font-size: 25px;"> <strong>
@@ -40,7 +40,7 @@
                 <button class="btn-primary" type="submit" >Gửi</button>
               </form>
         <%}else{ %>
-              <p>Hãy</p> <a href="/login" style="color: green;">Đăng nhâp</a>
+              <p>Hãy <a href="/login" style="color: green;"><u>đăng nhập</u></a> để được bình luận nhé !</p>
         <%}%>
         <hr>
         <% cmt.forEach(function(comment){ %>
