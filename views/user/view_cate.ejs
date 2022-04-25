@@ -24,7 +24,9 @@
               width="300px"
             />
             <div class="caption">
-              <h4 class=""><%- item.name %></h4>
+              <marquee class="" direction="left" style="font-size: 150%;">
+                <%- item.name %>
+              </marquee>
               <p
                 class=""
                 style="
@@ -46,6 +48,8 @@
                   >Chi tiết</a
                 >
               </div>
+              <a href="/add-to-cart/<%- danhsach._id %>" class="btn btn-outline-warning" style="margin-top: 15px ;"><i class="fa fa-cart-plus"><b>Add to
+                Cart</b></i></a>
             </div>
           </div>
         </div>

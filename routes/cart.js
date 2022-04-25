@@ -124,11 +124,12 @@ cart.get("/view/:id", (req, res) => {
 cart.get('/xacnhan/:id', function(req, res, next) {
   var id = req.params.id;
   Cart.findById(id, function(err, data){
+    console.log("Thông tin Cart :", data);
     data.st = 1;
+    data.status = "Đã xác nhận";
     data.save();
     req.flash('success_msg', 'Đã Thêm Thành Công');
     res.render("admin/view-order", { cart: data });
-    
   });
 });
 cart.post("/menu", function (req, res) {

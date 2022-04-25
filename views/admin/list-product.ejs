@@ -24,14 +24,14 @@
       <div class="row" style="margin-left: -5%" >
         
           <% danhsach.forEach(function(product){ %>
-          <div class="col-sm-3" style="height: 500px; width: 300px;">
+          <div class="col-sm-3" style="height: 500px; width: 150px;">
                     <div class="thumbnail" >
                       <img
                         class=""
                         src="/upload/<%- product.image %>"
-                        alt="Sản phẩm 8"
+                        alt="<%- product.name %>"
                         
-                        style="padding-right: 6%; width: 100%; height: 200px;"
+                        style="padding-right: 6%; width: 200px; height: 200px;"
                       />
                       <div class="caption">
                         <marquee class="" direction="left" style="font-size: 150%;">

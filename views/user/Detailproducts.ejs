@@ -19,11 +19,15 @@
             <p style="height: 50%;"> <strong>Chi tiết :</strong>
               <%- danhsach.note %>
             </p>
+            <% if(danhsach.quantity==0){ %>
+              <button type="button" class="btn btn-danger">TẠM HẾT HÀNG</button>
+            <%}else{ %>
             <p> <strong>Giá :</strong> <mark>
                 <%- danhsach.price %>
               </mark></p>
             <a href="/add-to-cart/<%- danhsach._id %>" class="btn btn-outline-success"><i class="fa fa-cart-plus">Add to
                 Cart</i></a>
+            <%}%>
           </div>
         </div>
         <br>
@@ -55,6 +59,7 @@
             <a href="/delete-comment/<%- comment._id %>">
               <p style="margin-left: 100px;">Xoá</p>
             </a>
+            <p style="font-size: 65%;"><%= comment.ngaygui.getDate()%>/ <%= comment.ngaygui.getMonth() +1 %> / <%= comment.ngaygui.getFullYear()%></p>
             <br>
           </div>
           <% }); %>
