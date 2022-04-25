@@ -83,13 +83,21 @@ if(err){
 cate.get("/cate/:id",(req,res)=>{
 
     cates.find().then(function(data){
-        item = data
-     products.find({cateID: req.params.id} ).then(function (data) { 
-        res.render("user/view_cate", { ca: data }); 
-        console.log(data);
-      });
+        item = data;
+        products.find({cateID: req.params.id} ).then(function (data) { 
+            
+            cates.findById(req.params.id).then(function(currentcate){
+                res.render("user/view_cate", {
+                     ca: data,
+                     tencate : currentcate.namecate,
+                     }); 
+            })
+        });
     })
 })
+
+
+
 cate.get("/delete_cate/:id", (req, res) => {
     if (req.session.loggin) {
       cates.deleteOne({ _id: req.params.id }, function (err) {

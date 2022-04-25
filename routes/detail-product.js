@@ -1,7 +1,7 @@
-var express = require("express")
-const products = require("../models/products.model")
+var express = require("express");
+const products = require("../models/products.model");
 const comments = require("../models/comment.models");
-
+const Cate = require("../models/Cate");
 var detail_product = express.Router();
 
 
@@ -12,13 +12,18 @@ detail_product.get("/user/detail-product/:id",(req,res)=>{
     if(err){
 
     }else{
-      danhsach= data
-      idsp = danhsach._id
+
+      danhsach= data;
+      idsp = danhsach._id;
+      idcate = danhsach.cateID;
       comments.find( {idsp}).then(function (data) {
-        console.log(data)
-        res.render("user/Detailproducts",{   
-          cmt : data,
-          guess : user,
+        products.find({cateID: idcate} ).then(function (item) { 
+          res.render("user/Detailproducts",{   
+            cmt : data,
+            guess : user,
+            relate : item,
+            idca : idcate,
+          });
         });
       });
      
@@ -27,7 +32,10 @@ detail_product.get("/user/detail-product/:id",(req,res)=>{
     })
    
     });
-    
+    // console.log(data)
+    // res.render("user/Detailproducts",{   
+    //   cmt : data,
+    //   guess : user,
 detail_product.post("/comment",(req,res)=>{
   if(req.session.loggin){
       user = req.user
