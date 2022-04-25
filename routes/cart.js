@@ -177,9 +177,8 @@ cart.get('/xoa/:id', function(req, res) {
 		if(err){console.log(err)
 		}else{
       console.log(offer);
-
-		req.flash('success_msg', 'Đã Xoa Thành Công');
-	   res.redirect('/list_order'); 
+		  req.flash('success_msg', 'Đã Xoá Thành Công');
+	    res.redirect('/list_order'); 
 	}});
 });
 

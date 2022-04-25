@@ -276,3 +276,60 @@ h1, h2, h3, h4, h5, h6 {
         </div>
     </div>
 </footer>
+<!-- 
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/respond.min.js"></script>
+<script src="js/application.js"></script>
+<script src="js/bootstrap-tooltip.js"></script>
+<script defer src="js/jquery.fancybox.js"></script>
+<script defer src="js/jquery.flexslider.js"></script>
+<script type="text/javascript" src="js/jquery.tweet.js"></script>
+<script  src="js/cloud-zoom.1.0.2.js"></script>
+<script  type="text/javascript" src="js/jquery.validate.js"></script>
+<script type="text/javascript"  src="js/jquery.carouFredSel-6.1.0-packed.js"></script>
+<script type="text/javascript"  src="js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript"  src="js/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript"  src="js/jquery.ba-throttle-debounce.min.js"></script>
+<script defer src="js/custom.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        menu();
+
+        $('.updateCart').click(function(){
+            var id = $(this).attr('id');
+            var soluong = parseInt($('#'+id).val());
+            if(soluong > 0){
+                $.post(
+                    './updateCart',
+                    {
+                      id      : id,
+                      soluong : soluong
+                    }, function(data){                     
+                      
+                      if(data.st ==1) location.href = "/list_order";
+                    }
+                ), 'json';
+            }
+        });
+
+         $('.delCart').click(function(){
+            var id = $(this).attr('id');
+           
+                $.post(
+                    "./xoa",
+                    {
+                      id      : id
+                    }, function(data){                     
+                      
+                      if(data.st ==1) location.href = "/list_order";
+                    }
+                ), 'json';
+            
+        });
+
+
+    });
+
+
+</script> -->

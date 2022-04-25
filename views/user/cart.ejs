@@ -18,18 +18,19 @@
             <% var total=0; if(data){ data.forEach(function(item){ total +=item.price %>
               <tr>
                 <td><a
-                    href="/chi-tiet/<%= item.item.nameKhongDau%>.<%= item.item._id%>.<%= item.item.cateId%>.html"><img
+                    href="/user/detail-product/<%= item.item._id%>"><img
                       title="product" alt="product" src="/upload/<%= item.item.image%>" height="100" width="200"></a>
                 </td>
-                <td><a href="/chi-tiet/<%= item.item.nameKhongDau%>.<%= item.item._id%>.<%= item.item.cateId%>.html">
+                <td><a href="/user/detail-product/<%= item.item._id%>">
                     <%= item.item.name%>
                   </a></td>
 
                 <td>
                   <%= item.item.price%> đ
                 </td>
-                <td><input id="<%= item.item._id%>" type="text" size="1" value="<%= item.qty%>" name="quantity[40]"
-                    class="span1"> <a class="fa fa-trash" href="/xoa/<%= item.item._id%>" aria-hidden="true"></a>
+                <td><input id="<%= item.item._id%>" type="text" size="1" value="<%= item.qty%>" name="quantity[40]" class="span1" disabled readonly> 
+                  <!-- <a  href="#"><i class="fa-solid fa-arrows-rotate updateCart" id="<%= item.item._id%>" data-original-title="Update"> </i></a>
+                  <a href="#"><i class="fa fa-trash delCart" href="#" id="<%= item.item._id%>" data-original-title="Remove" aria-hidden="true"></i></a> -->
                 </td>
                 <td>
                   <%= item.price%> đ
