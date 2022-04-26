@@ -116,6 +116,6 @@ app.use("/", product);
 app.use("/", cate);
 app.use("/", detail_product);
 // catch 404 and forward to error handler
-
-app.listen(process.env.PORT || 4000)
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, ()=>{console.log("Server is running on port ", PORT)});
 

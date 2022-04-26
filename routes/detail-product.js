@@ -17,7 +17,7 @@ detail_product.get("/user/detail-product/:id",(req,res)=>{
       idsp = danhsach._id;
       idcate = danhsach.cateID;
       comments.find( {idsp}).then(function (data) {
-        products.find({cateID: idcate} ).then(function (item) { 
+        products.find({cateID: idcate} ).limit(4).then(function (item) { 
           res.render("user/Detailproducts",{   
             cmt : data,
             guess : user,
