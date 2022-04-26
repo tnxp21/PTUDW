@@ -1,39 +1,39 @@
 
-var createError = require('http-errors');
-var express = require('express');
-var app = express();
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var session = require('express-session')
-var logger = require('morgan');
-var ejs = require("ejs");
-var LocalStrategy = require("passport-local");
-var passport = require('passport');
-var flash = require('connect-flash');
-var jwt =require("jsonwebtoken");
+const createError = require('http-errors');
+const express = require('express');
+const app = express();
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const session = require('express-session')
+const logger = require('morgan');
+const ejs = require("ejs");
+const LocalStrategy = require("passport-local");
+const passport = require('passport');
+const flash = require('connect-flash');
+const jwt =require("jsonwebtoken");
 
 // link router
-var cate = require("./routes/cate.js");
-var view_user = require("./routes/view_user.js");
-var cart = require("./routes/cart.js");
-var detail_notifi = require("./routes/detail-notifi.js");
-var notifi = require("./routes/notification.js");
-var detail_product = require("./routes/detail-product.js");
-var router = require("./routes/users.js")
-var product = require('./routes/product.js');
-var client = require('./routes/client.js');
-var about = require('./routes/about.js');
-var contact = require('./routes/contact.js');
+const cate = require("./routes/cate.js");
+const view_user = require("./routes/view_user.js");
+const cart = require("./routes/cart.js");
+const detail_notifi = require("./routes/detail-notifi.js");
+const notifi = require("./routes/notification.js");
+const detail_product = require("./routes/detail-product.js");
+const router = require("./routes/users.js")
+const product = require('./routes/product.js');
+const client = require('./routes/client.js');
+const about = require('./routes/about.js');
+const contact = require('./routes/contact.js');
 
 //Link models
-var products = require("./models/products.model");
-
+const products = require("./models/products.model");
+config = require('./config/database.js');
 
 const mongoose = require('mongoose');
-
+//connect db
 async function connect() {
     try {
-        await mongoose.connect("mongodb+srv://admin:123456abc@cluster0.2phkv.mongodb.net/ShoppingOnl");
+        await mongoose.connect(config.url,{ useNewUrlParser: true , useUnifiedTopology: true });
     }
     catch (error) {
         console.error(error.message);
