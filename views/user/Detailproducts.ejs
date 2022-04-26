@@ -62,7 +62,10 @@
             <p style="font-size: 65%;"><%= comment.ngaygui.getDate()%>/ <%= comment.ngaygui.getMonth() +1 %> / <%= comment.ngaygui.getFullYear()%></p>
             <br>
           </div>
-          <% }); %>
+        <% }); %>
+        <h3 style="color: green;"><i>Sản phẩm khác cùng danh mục</i></h3>  
+        <%- include("./relate_product") %>
+
       </div>
       <%- include("../layout/footer") %>
     </body>

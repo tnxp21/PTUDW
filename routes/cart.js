@@ -22,7 +22,7 @@ cart.get("/shopping-cart", function (req, res) {
     req.session.cart ? req.session.cart : { items: {} }
   );
   var data = giohang.convertArray();
-
+  console.log("Giỏ hàng : ",data);
   res.render("user/cart", { data: data });
 });
 
@@ -170,13 +170,14 @@ console.log(err)
 	   res.redirect('/checkout'); 
 	}});
 });
+
 cart.get('/xoa/:id', function(req, res) {
 	var id = req.params.id;
 	Cart.findOneAndRemove({_id: id}, function(err, offer){
-		if(err){
-console.log(err)
+		if(err){console.log(err)
 		}else{
-		
+      console.log(offer);
+
 		req.flash('success_msg', 'Đã Xoa Thành Công');
 	   res.redirect('/list_order'); 
 	}});

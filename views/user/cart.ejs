@@ -29,7 +29,7 @@
                   <%= item.item.price%> đ
                 </td>
                 <td><input id="<%= item.item._id%>" type="text" size="1" value="<%= item.qty%>" name="quantity[40]"
-                    class="span1">
+                    class="span1"> <a class="fa fa-trash" href="/xoa/<%= item.item._id%>" aria-hidden="true"></a>
                 </td>
                 <td>
                   <%= item.price%> đ
