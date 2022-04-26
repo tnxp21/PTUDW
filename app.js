@@ -1,4 +1,4 @@
-require('dotenv').config()
+
 var createError = require('http-errors');
 var express = require('express');
 var app = express();
@@ -28,11 +28,23 @@ var contact = require('./routes/contact.js');
 //Link models
 var products = require("./models/products.model");
 
-// kết nối database
-var config = require('./config/database.js');
-var mongoose = require('mongoose');
 
-mongoose.connect(config.url,{ useNewUrlParser: true , useUnifiedTopology: true });
+const mongoose = require('mongoose');
+
+async function connect() {
+    try {
+        await mongoose.connect("mongodb+srv://admin:123456abc@cluster0.2phkv.mongodb.net/ShoppingOnl");
+    }
+    catch (error) {
+        console.error(error.message);
+        process.exit(-1);
+    }
+}
+connect().then(() => {
+  console.log('Connected to database');
+}).catch(err => {
+  console.log('Database connection error: ' + err);
+});
 
 require('./config/passport'); //vượt qua passport để config trang đăng nhâp/đăng ký
 app.use(session({
